@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siddharth Basapur | Portfolio</title>
+  <meta name="description" content="Portfolio website for Siddharth (Sid) Basapur, Computer Engineering student at The Ohio State University." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121936;
+      --panel-2: #182246;
+      --text: #eef2ff;
+      --muted: #b9c2e3;
+      --accent: #7dd3fc;
+      --accent-2: #a78bfa;
+      --line: rgba(255,255,255,0.12);
+      --card-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      --max: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #08101f 0%, #0b1020 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.9;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(11, 16, 32, 0.75);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 80px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side,
+    .card {
+      background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .hero-main {
+      padding: 40px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 760px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid var(--line);
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #09111f;
+      border: none;
+    }
+
+    .hero-meta {
+      display: grid;
+      gap: 14px;
+      padding: 28px;
+    }
+
+    .meta-item {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .meta-label {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 4px;
+    }
+
+    section {
+      padding: 28px 0;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 18px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      margin-bottom: 20px;
+      max-width: 800px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .card {
+      padding: 26px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .chip {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(125, 211, 252, 0.08);
+      border: 1px solid rgba(125, 211, 252, 0.18);
+      color: #dff7ff;
+      font-size: 0.95rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.025));
+      border: 1px solid var(--line);
+    }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .timeline h3 {
+      font-size: 1.15rem;
+      margin-bottom: 2px;
+    }
+
+    .org {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .footer {
+      padding: 36px 0 56px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-main {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .timeline-top {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">Siddharth Basapur</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow">Computer Engineering Student</div>
+          <h1>Siddharth “Sid” Basapur</h1>
+          <p class="subtitle">
+            I’m a Computer Engineering student at The Ohio State University with interests in software,
+            robotics, electronics, CAD design, and hands-on technical problem solving. I’m currently seeking
+            research and internship opportunities where I can contribute, learn quickly, and build meaningful systems.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Get in Touch</a>
+            <a class="btn" href="#experience">View Experience</a>
+            <a class="btn" href="https://siddharthbasapur.com" target="_blank" rel="noreferrer">Visit Personal Domain</a>
+          </div>
+        </div>
+
+        <aside class="hero-side hero-meta">
+          <div class="meta-item">
+            <div class="meta-label">Location</div>
+            <div>Aurora, Illinois</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">University</div>
+            <div>The Ohio State University</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Degree</div>
+            <div>B.S. in Electrical and Computer Engineering with Honors</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">GPA</div>
+            <div>3.8</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-copy">
+            I enjoy working at the intersection of hardware and software. My background includes coding,
+            robotics instruction, engineering competitions, and student leadership. I like environments where I can
+            turn ideas into working prototypes, collaborate with a team, and keep improving through real projects.
+          </p>
+          <p class="section-copy">
+            Beyond coursework, I’ve built experience by teaching LEGO robotics to younger students,
+            participating in engineering and automotive teams, and helping introduce others to AI and machine learning.
+            This site turns your resume into a cleaner online presence while keeping it recruiter-friendly.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 class="section-title">Core Interests</h2>
+          <p class="section-copy">A few areas that stand out from your resume and are worth highlighting online:</p>
+          <div class="chips">
+            <span class="chip">Computer Engineering</span>
+            <span class="chip">Robotics</span>
+            <span class="chip">Electronics</span>
+            <span class="chip">CAD Design</span>
+            <span class="chip">Programming</span>
+            <span class="chip">AI &amp; ML</span>
+            <span class="chip">STEM Education</span>
+            <span class="chip">Leadership</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <div>
+                <h3>Bachelor of Science in Electrical and Computer Engineering with Honors</h3>
+                <div class="org">The Ohio State University, College of Engineering — Columbus, OH</div>
+              </div>
+              <div class="date">Expected May 2029</div>
+            </div>
+            <ul>
+              <li>Specialization: Computer Engineering</li>
+              <li>GPA: 3.8</li>
+              <li>Recipient of the National Buckeye Scholarship based on high school merit</li>
+              <li>Selected for the Engineering Honors Program</li>
+              <li>Relevant coursework includes Physics, Math, Intro to Engineering, and Intro to Computer Science Engineering</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <div>
+                <h3>High School Diploma</h3>
+                <div class="org">Metea Valley High School — Aurora, IL</div>
+              </div>
+              <div class="date">May 2025</div>
+            </div>
+            <ul>
+              <li>Weighted GPA: 4.2/4.0</li>
+              <li>Completed 12 Advanced Placement courses and Virtual Enterprises International (VEI)</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-copy">
+          Your resume shows a good early mix of technical teaching, communication, customer-facing work, and teamwork.
+          For internship applications, this makes you look adaptable and dependable.
+        </p>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <div>
+                <h3>Lead Teacher</h3>
+                <div class="org">STEMshala Enrichment Center — Naperville, IL</div>
+              </div>
+              <div class="date">June 2024 – August 2025</div>
+            </div>
+            <ul>
+              <li>Taught elementary school students how to build and program LEGO robots</li>
+              <li>Guided hands-on exploration of STEM concepts through project-based learning</li>
+              <li>Adapted instruction to individual student needs while encouraging curiosity and experimentation</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <div>
+                <h3>Social Media Marketing</h3>
+                <div class="org">Midwest Trading Group — Chicago, IL</div>
+              </div>
+              <div class="date">July 2023 – August 2023</div>
+            </div>
+            <ul>
+              <li>Created social media content to strengthen product visibility and online presence</li>
+              <li>Improved engagement between customers and products across digital platforms</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <div>
+                <h3>Paddle Boat Manager &amp; Crew Member</h3>
+                <div class="org">Fox Valley Park District &amp; Pappa Roti Café — Aurora, IL</div>
+              </div>
+              <div class="date">June 2022 – August 2022</div>
+            </div>
+            <ul>
+              <li>Operated the paddle boat attraction at Blackberry Farm</li>
+              <li>Managed front counter transactions as a cashier</li>
+              <li>Provided fast, reliable service as a line cook in a team environment</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 class="section-title">Activities &amp; Involvement</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <div>
+                  <h3>Selected Talent Cohort Beta Member</h3>
+                  <div class="org">Honda Launchpad — Columbus, OH</div>
+                </div>
+                <div class="date">November 2025 – Current</div>
+              </div>
+              <ul>
+                <li>Participating in exclusive Honda Launchpad activities on campus, including robotics competitions</li>
+                <li>Touring Honda manufacturing facilities and engaging with vehicle demonstrations</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <div>
+                  <h3>Electronics Team Member</h3>
+                  <div class="org">Formula Buckeyes SAE — Columbus, OH</div>
+                </div>
+                <div class="date">September 2025 – Current</div>
+              </div>
+              <ul>
+                <li>Working on the low-voltage electronics subteam under Owen Chevalier for a racing kart</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="section-title">Leadership &amp; Projects</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <div>
+                  <h3>Lead for Niche Programs — AI and Machine Learning</h3>
+                  <div class="org">Computer Science Club — Aurora, IL</div>
+                </div>
+                <div class="date">September 2021 – May 2025</div>
+              </div>
+              <ul>
+                <li>Presented AI concepts and drafted project pitches for new club members</li>
+                <li>Taught members how machine learning models function</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <div>
+                  <h3>State Qualifier</h3>
+                  <div class="org">SkillsUSA — Aurora, IL</div>
+                </div>
+                <div class="date">September 2023 – April 2024</div>
+              </div>
+              <ul>
+                <li>Created a drone attachment using Arduino circuitry to help farmers spread fertilizer across rough terrain</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="card">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-copy">
+            This section is intentionally simple so recruiters can find the essentials fast. You can later add a resume download button,
+            GitHub projects, photos, or a dedicated projects page.
+          </p>
+          <div class="contact-list">
+            <div><strong>Email:</strong> <a href="mailto:basapur.1@osu.edu">basapur.1@osu.edu</a></div>
+            <div><strong>Phone:</strong> <a href="tel:18472190849">(847) 219-0849</a></div>
+            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/siddharthbasapur" target="_blank" rel="noreferrer">linkedin.com/in/siddharthbasapur</a></div>
+            <div><strong>Website:</strong> <a href="https://siddharthbasapur.com" target="_blank" rel="noreferrer">siddharthbasapur.com</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 Siddharth Basapur. Built as a simple personal portfolio website.</div>
+  </footer>
+</body>
+</html>
