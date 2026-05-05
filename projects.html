@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Siddharth Basapur | Projects</title>
-
+  <meta name="description" content="Projects by Siddharth Basapur." />
   <style>
     :root {
       --bg: #0b1020;
@@ -25,11 +25,24 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: linear-gradient(180deg, #08101f 0%, #0b1020 100%);
       color: var(--text);
       line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.9;
     }
 
     .container {
@@ -42,38 +55,33 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: rgba(11,16,32,0.8);
+      background: rgba(11, 16, 32, 0.75);
       border-bottom: 1px solid var(--line);
     }
 
     .nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       padding: 16px 0;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .brand {
       font-weight: 700;
+      letter-spacing: 0.2px;
     }
 
     .nav-links {
       display: flex;
+      flex-wrap: wrap;
       gap: 18px;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      opacity: 0.9;
+      font-size: 0.95rem;
     }
 
     .hero {
-      padding: 70px 0 35px;
+      padding: 80px 0 30px;
     }
 
     .hero-card,
@@ -85,7 +93,7 @@
     }
 
     .hero-card {
-      padding: 38px;
+      padding: 40px;
     }
 
     .eyebrow {
@@ -98,34 +106,89 @@
     }
 
     h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-size: clamp(2.2rem, 5vw, 4.3rem);
       line-height: 1.08;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 780px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid var(--line);
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #09111f;
+      border: none;
+    }
+
+    section {
+      padding: 28px 0;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 18px;
     }
 
     .section-copy {
       color: var(--muted);
-      margin-bottom: 15px;
-      max-width: 850px;
+      margin-bottom: 20px;
+      max-width: 880px;
     }
 
-    .projects-grid {
+    .projects-list {
       display: grid;
-      gap: 32px;
-      padding-bottom: 40px;
+      gap: 28px;
     }
 
     .project-card {
       overflow: hidden;
     }
 
-    .project-image {
-      width: 90%;
-      max-height: 450px;
+    .project-media {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 360px;
       object-fit: contain;
       display: block;
-      margin: 24px auto;
-      border-radius: 14px;
+      border-radius: 16px;
+      background: #050914;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .single-project-image {
+      width: 92%;
+      max-height: 460px;
+      object-fit: contain;
+      display: block;
+      margin: 20px auto;
+      border-radius: 16px;
+      background: #050914;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .project-content {
@@ -151,17 +214,16 @@
     }
 
     .chip {
-      padding: 8px 12px;
+      padding: 9px 13px;
       border-radius: 999px;
-      background: rgba(125,211,252,0.1);
-      border: 1px solid rgba(125,211,252,0.2);
+      background: rgba(125, 211, 252, 0.08);
+      border: 1px solid rgba(125, 211, 252, 0.18);
       color: #dff7ff;
       font-size: 0.95rem;
     }
 
     ul {
       padding-left: 20px;
-      color: var(--muted);
     }
 
     li + li {
@@ -169,30 +231,47 @@
     }
 
     .footer {
-      text-align: center;
       padding: 36px 0 56px;
       color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-card,
+      .project-content {
+        padding: 28px;
+      }
+
+      .project-media {
+        grid-template-columns: 1fr;
+      }
+
+      .project-media img {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 640px) {
       .nav {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .hero-card,
-      .project-content {
-        padding: 24px;
+      .nav-links {
+        gap: 12px;
       }
 
-      .project-image {
-        width: 94%;
-        max-height: 380px;
+      .single-project-image {
+        width: 100%;
       }
     }
   </style>
 </head>
-
 <body>
   <div class="topbar">
     <div class="container nav">
@@ -200,120 +279,130 @@
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#contact">Contact</a>
       </div>
     </div>
   </div>
 
-  <main class="container">
+  <main>
     <section class="hero">
-      <div class="hero-card">
-        <div class="eyebrow">Project Portfolio</div>
-        <h1>Projects</h1>
-        <p class="section-copy">
-          A collection of engineering and technical projects that show my experience with hardware prototyping,
-          Arduino systems, product design, accessibility, and real-world problem solving.
-        </p>
+      <div class="container">
+        <div class="hero-card">
+          <div class="eyebrow">Projects</div>
+          <h1>Technical Projects</h1>
+          <p class="subtitle">
+            A collection of engineering projects focused on hardware prototyping, embedded systems,
+            accessibility, robotics, and real-world problem solving.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#safemed">View SafeMed</a>
+            <a class="btn" href="#skillsusa">View SkillsUSA</a>
+            <a class="btn" href="index.html">Back to Home</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="projects-grid">
+    <section>
+      <div class="container projects-list">
 
-      <article class="project-card">
-        <img
-          class="project-image"
-          src="images/skillsusa_project.jpg"
-          alt="SkillsUSA Arduino drone fertilizer attachment prototype"
-        />
-
-        <div class="project-content">
-          <h3 class="project-title">Drone Fertilizer Attachment Prototype</h3>
-          <div class="project-subtitle">SkillsUSA • Arduino • Hardware Prototyping • Agricultural Innovation</div>
-
-          <p class="section-copy">
-            For SkillsUSA, I designed and built a prototype drone attachment intended to help farmers spread fertilizer
-            across rough or difficult terrain. The goal was to explore a low-cost engineering solution for an agricultural
-            problem where traditional equipment may be less practical.
-          </p>
-
-          <p class="section-copy">
-            The prototype used Arduino circuitry, wiring, a battery-powered electronics setup, and a custom physical
-            structure to demonstrate how a drone-based fertilizer distribution system could be controlled and mounted.
-            This project helped me practice turning an idea into a physical proof of concept.
-          </p>
-
-          <div class="chips">
-            <span class="chip">Arduino</span>
-            <span class="chip">Circuit Design</span>
-            <span class="chip">Prototyping</span>
-            <span class="chip">Engineering Design</span>
-            <span class="chip">Problem Solving</span>
+        <article id="safemed" class="project-card">
+          <div class="project-media">
+            <img
+              src="images/pill-organizer.jpg"
+              alt="SafeMed automatic pill organizer prototype"
+            />
+            <img
+              src="images/SafeMed Demonstration.gif"
+              alt="SafeMed automatic pill organizer demonstration GIF"
+            />
           </div>
 
-          <ul>
-            <li>Built a physical prototype using cardboard structure, wiring, Arduino hardware, and battery power</li>
-            <li>Focused on a real-world agriculture use case involving fertilizer distribution</li>
-            <li>Designed the attachment concept for terrain that may be hard to reach with standard equipment</li>
-            <li>Presented the project through SkillsUSA competition work</li>
-          </ul>
-        </div>
-      </article>
+          <div class="project-content">
+            <h2 class="project-title">SafeMed Automatic Pill Organizer</h2>
+            <div class="project-subtitle">Arduino • Embedded Systems • Accessibility Design • Healthcare Technology</div>
 
-      <article class="project-card">
-        <img
-          class="project-image"
-          src="images/pill-organizer.jpg"
-          alt="SafeMed automatic pill organizer prototype with keypad"
-        />
+            <p class="section-copy">
+              SafeMed is a fully functioning automatic pill organizer designed for seniors age 65 and older.
+              The goal of the project was to make medication management easier, safer, and more independent
+              for users who may need help remembering or accessing scheduled doses.
+            </p>
 
-        <div class="project-content">
-          <h3 class="project-title">SafeMed Automatic Pill Organizer</h3>
-          <div class="project-subtitle">Arduino • Servo Motor • 3D Printing • Product Design • Accessibility</div>
+            <p class="section-copy">
+              The prototype includes a physical enclosure, keypad interface, internal dispensing mechanism,
+              and electronic control system. The project combines hardware design, circuit integration,
+              embedded systems, and user-centered thinking to solve a real healthcare-related problem.
+            </p>
 
-          <p class="section-copy">
-            SafeMed is a fully functioning automatic pill organizer designed for seniors 65+ who live independently
-            and need a simpler, safer way to manage daily medication. The project addresses common issues such as
-            missed doses, double dosing, taking the wrong medication, and difficulty using traditional pill organizers.
-          </p>
+            <div class="chips">
+              <span class="chip">Arduino</span>
+              <span class="chip">Embedded Systems</span>
+              <span class="chip">Circuit Design</span>
+              <span class="chip">Product Design</span>
+              <span class="chip">Accessibility</span>
+              <span class="chip">Healthcare</span>
+            </div>
 
-          <p class="section-copy">
-            I worked on product design and prototyping for a motorized circular pill organizer that dispenses only one
-            dose at a time. The prototype uses an Arduino-controlled system, membrane keypad, servo motor, 3D printed
-            components, and seven daily compartments. Buttons 1–7 allow the user to select the correct day, and the
-            rotating compartment aligns with the lid opening to make the selected dose accessible.
-          </p>
-
-          <p class="section-copy">
-            During testing, the keypad reliably controlled the system, the rotating mechanism functioned, and the design
-            reduced the risk of double dosing. The prototype achieved a response time under three seconds, held at least
-            four pills per compartment, and demonstrated a portable form factor. Future improvements include improving
-            alignment accuracy, expanding user testing, and making the device fully portable.
-          </p>
-
-          <div class="chips">
-            <span class="chip">Arduino</span>
-            <span class="chip">Servo Motor</span>
-            <span class="chip">3D Printing</span>
-            <span class="chip">Keypad Interface</span>
-            <span class="chip">Accessibility Design</span>
-            <span class="chip">Healthcare Technology</span>
+            <h3 class="section-title" style="font-size: 1.3rem; margin-top: 10px;">Key Features</h3>
+            <ul>
+              <li>Automatic pill dispensing system for scheduled medication use</li>
+              <li>Keypad-based interface for user input and control</li>
+              <li>Physical prototype enclosure designed for practical use</li>
+              <li>Created with senior users in mind, focusing on simplicity and reliability</li>
+              <li>Demonstrates hardware, electronics, and product-design problem solving</li>
+            </ul>
           </div>
+        </article>
 
-          <ul>
-            <li>Designed for seniors 65+ and individuals managing multiple daily medications</li>
-            <li>Built a rotating pill organizer prototype with seven daily medication compartments</li>
-            <li>Used Arduino, keypad input, and servo motor control to automate dispensing</li>
-            <li>Created 3D printed components for the enclosure, base, lid, and rotating compartment</li>
-            <li>Tested rotational accuracy, response time, keypad control, and dispensing reliability</li>
-            <li>Focused on safety, independence, affordability, and ease of use for older adults</li>
-          </ul>
-        </div>
-      </article>
+        <article id="skillsusa" class="project-card">
+          <img
+            class="single-project-image"
+            src="images/skillsusa-project.jpg"
+            alt="SkillsUSA prototype with Arduino, battery, wiring, and cardboard structure"
+          />
 
+          <div class="project-content">
+            <h2 class="project-title">Drone Fertilizer Attachment Prototype</h2>
+            <div class="project-subtitle">SkillsUSA • Arduino • Hardware Prototyping • Agricultural Innovation</div>
+
+            <p class="section-copy">
+              This SkillsUSA project focused on designing a practical engineering solution for agriculture.
+              I built a prototype attachment using Arduino circuitry and a physical cardboard model to demonstrate
+              how a drone-based fertilizer spreading system could help farmers cover rough or hard-to-reach terrain.
+            </p>
+
+            <p class="section-copy">
+              The project helped me strengthen my skills in electronics, prototyping, and turning an idea into a
+              working proof of concept. It also gave me experience thinking through real-world engineering problems
+              and designing technology with a practical use case.
+            </p>
+
+            <div class="chips">
+              <span class="chip">Arduino</span>
+              <span class="chip">Circuit Design</span>
+              <span class="chip">Hardware Prototyping</span>
+              <span class="chip">Engineering Design</span>
+              <span class="chip">Agriculture</span>
+            </div>
+
+            <h3 class="section-title" style="font-size: 1.3rem; margin-top: 10px;">What I Worked On</h3>
+            <ul>
+              <li>Designed and assembled a prototype model for a drone-based fertilizer attachment</li>
+              <li>Integrated Arduino hardware, wiring, and battery-powered electronics</li>
+              <li>Built a physical structure to demonstrate the concept and component layout</li>
+              <li>Focused on a real-world farming problem involving difficult terrain</li>
+              <li>Presented the concept through SkillsUSA competition work</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    © 2026 Siddharth Basapur
+    <div class="container">© 2026 Siddharth Basapur. Built as a simple personal portfolio website.</div>
   </footer>
 </body>
 </html>
