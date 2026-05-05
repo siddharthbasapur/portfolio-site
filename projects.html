@@ -15,7 +15,7 @@
       --accent: #7dd3fc;
       --accent-2: #a78bfa;
       --line: rgba(255,255,255,0.12);
-      --shadow: 0 12px 30px rgba(0,0,0,0.25);
+      --card-shadow: 0 12px 30px rgba(0,0,0,0.25);
       --max: 1100px;
     }
 
@@ -25,6 +25,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: linear-gradient(180deg, #08101f 0%, #0b1020 100%);
       color: var(--text);
+      line-height: 1.6;
     }
 
     .container {
@@ -36,7 +37,7 @@
       position: sticky;
       top: 0;
       backdrop-filter: blur(14px);
-      background: rgba(11,16,32,0.8);
+      background: rgba(11,16,32,0.75);
       border-bottom: 1px solid var(--line);
     }
 
@@ -54,54 +55,42 @@
     .nav-links {
       display: flex;
       gap: 18px;
-    }
-
-    .btn {
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .btn-primary {
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      color: #09111f;
-      border: none;
+      font-size: 0.95rem;
     }
 
     .hero {
-      padding: 60px 0 20px;
+      padding: 80px 0 30px;
     }
 
     .hero-card {
       background: linear-gradient(180deg, var(--panel), var(--panel-2));
       border: 1px solid var(--line);
       border-radius: 24px;
-      padding: 32px;
+      padding: 36px;
+      box-shadow: var(--card-shadow);
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: clamp(2.2rem, 5vw, 4rem);
       margin-bottom: 12px;
     }
 
     .subtitle {
       color: var(--muted);
-      max-width: 700px;
+      max-width: 750px;
     }
 
     section {
-      padding: 30px 0;
+      padding: 28px 0;
     }
 
     .project-card {
       background: linear-gradient(180deg, var(--panel), var(--panel-2));
       border: 1px solid var(--line);
       border-radius: 24px;
+      margin-bottom: 28px;
       overflow: hidden;
-      margin-bottom: 30px;
+      box-shadow: var(--card-shadow);
     }
 
     .project-media {
@@ -109,53 +98,56 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       padding: 20px;
+      border-bottom: 1px solid var(--line);
     }
 
     .project-media img {
       width: 100%;
-      height: 300px;
+      height: 340px;
       object-fit: contain;
       background: #050914;
-      border-radius: 12px;
+      border-radius: 14px;
     }
 
     .single-project-image {
-      width: 90%;
+      width: 92%;
       margin: 20px auto;
       display: block;
       object-fit: contain;
-      max-height: 400px;
-      border-radius: 12px;
+      max-height: 460px;
+      border-radius: 14px;
     }
 
     .project-content {
-      padding: 24px;
+      padding: 26px;
     }
 
     .project-title {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       margin-bottom: 8px;
     }
 
     .project-subtitle {
       color: var(--accent);
+      font-weight: 600;
       margin-bottom: 14px;
     }
 
     .section-copy {
       color: var(--muted);
       margin-bottom: 14px;
+      max-width: 900px;
     }
 
     .chips {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
-      margin: 16px 0;
+      gap: 10px;
+      margin: 18px 0;
     }
 
     .chip {
-      padding: 6px 12px;
+      padding: 8px 12px;
       border-radius: 999px;
       background: rgba(125,211,252,0.08);
       border: 1px solid rgba(125,211,252,0.2);
@@ -165,7 +157,7 @@
       padding-left: 20px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
       .project-media {
         grid-template-columns: 1fr;
       }
@@ -175,13 +167,13 @@
 
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR (same as index) -->
   <div class="topbar">
     <div class="container nav">
       <div class="brand">Siddharth Basapur</div>
       <div class="nav-links">
-        <a class="btn btn-primary" href="index.html">Home</a>
-        <a class="btn" href="projects.html">Projects</a>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
       </div>
     </div>
   </div>
@@ -192,78 +184,98 @@
       <div class="hero-card">
         <h1>Projects</h1>
         <p class="subtitle">
-          A collection of engineering projects focused on hardware systems,
-          embedded design, and real-world problem solving.
+          A collection of engineering work focused on embedded systems, hardware prototyping,
+          and building solutions to real-world problems.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section>
     <div class="container">
 
-      <!-- SAFEMED FIRST -->
+      <!-- SAFEMED -->
       <div class="project-card">
         <div class="project-media">
-          <img src="images/pill-organizer.jpg" />
-          <img src="images/SafeMed Demonstration.gif" />
+          <img src="images/pill-organizer.jpg">
+          <img src="images/SafeMed Demonstration.gif">
         </div>
 
         <div class="project-content">
           <div class="project-title">SafeMed Automatic Pill Organizer</div>
-          <div class="project-subtitle">Arduino • Embedded Systems • Accessibility Design</div>
+          <div class="project-subtitle">Arduino • Embedded Systems • Accessibility • Product Design</div>
 
           <p class="section-copy">
-            SafeMed is a fully functioning automatic pill organizer designed to help seniors (65+) manage medication schedules safely and independently.
-            The system automates pill dispensing using a keypad interface and embedded control system.
+            SafeMed is a fully functioning automatic pill organizer designed to assist seniors (65+) in managing
+            their daily medication schedules safely and independently. The system addresses a critical real-world
+            problem—missed or incorrect medication dosing—by automating the dispensing process.
           </p>
 
           <p class="section-copy">
-            I designed and built the full prototype, integrating electronics, control logic, and a physical enclosure.
-            The project focused on accessibility, reliability, and real-world usability.
+            The device uses an embedded control system with a keypad interface to allow users to interact with the system,
+            set schedules, and retrieve medication. Internally, the system integrates Arduino-based control logic,
+            power systems, and a mechanical dispensing mechanism.
+          </p>
+
+          <p class="section-copy">
+            I designed and built the entire prototype, including circuit integration, enclosure construction, and system logic.
+            A major focus of the project was usability—ensuring the system is simple, reliable, and accessible for elderly users.
           </p>
 
           <div class="chips">
             <span class="chip">Arduino</span>
             <span class="chip">Embedded Systems</span>
             <span class="chip">Circuit Design</span>
-            <span class="chip">Product Design</span>
+            <span class="chip">Hardware Prototyping</span>
+            <span class="chip">User-Centered Design</span>
           </div>
 
           <ul>
-            <li>Automated pill dispensing system</li>
-            <li>Keypad interface for user control</li>
-            <li>Designed for elderly accessibility</li>
-            <li>Full physical prototype build</li>
+            <li>Automated medication dispensing system</li>
+            <li>Keypad-based user interface</li>
+            <li>Integrated electronics and control logic</li>
+            <li>Physical prototype enclosure design</li>
+            <li>Focused on accessibility and real-world usability</li>
           </ul>
         </div>
       </div>
 
-      <!-- SKILLSUSA SECOND -->
+      <!-- SKILLSUSA -->
       <div class="project-card">
 
-        <img class="single-project-image" src="images/skillsusa_project.jpg" />
+        <img class="single-project-image" src="images/skillsusa_project.jpg">
 
         <div class="project-content">
           <div class="project-title">Drone Fertilizer Attachment Prototype</div>
-          <div class="project-subtitle">SkillsUSA • Arduino • Hardware Prototyping</div>
+          <div class="project-subtitle">SkillsUSA • Arduino • Agricultural Engineering</div>
 
           <p class="section-copy">
-            Designed a drone attachment system to help farmers spread fertilizer across rough terrain.
-            Built a prototype using Arduino circuitry and a physical model.
+            This project explored the use of drone technology to improve agricultural efficiency,
+            specifically in spreading fertilizer across uneven or hard-to-reach terrain.
+          </p>
+
+          <p class="section-copy">
+            I developed a working prototype attachment using Arduino circuitry, wiring systems,
+            and a structural model to simulate how fertilizer distribution could be automated through aerial systems.
+          </p>
+
+          <p class="section-copy">
+            The project required combining electronics, mechanical design, and systems thinking to translate a real-world
+            agricultural problem into a functional engineering solution.
           </p>
 
           <div class="chips">
             <span class="chip">Arduino</span>
             <span class="chip">Electronics</span>
             <span class="chip">Prototyping</span>
+            <span class="chip">Engineering Design</span>
           </div>
 
           <ul>
-            <li>Built functional prototype system</li>
-            <li>Integrated electronics and wiring</li>
-            <li>Focused on real-world agricultural problem</li>
+            <li>Designed drone-based fertilizer system concept</li>
+            <li>Integrated electronics and circuit components</li>
+            <li>Built physical prototype structure</li>
+            <li>Applied engineering design to real-world agriculture problem</li>
           </ul>
         </div>
       </div>
