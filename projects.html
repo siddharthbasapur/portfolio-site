@@ -7,7 +7,6 @@
 
   <style>
     :root {
-      
       --bg: #0b1020;
       --panel: #121936;
       --panel-2: #182246;
@@ -20,9 +19,11 @@
       --max: 1100px;
     }
 
-
-    
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -32,26 +33,20 @@
     }
 
     a {
-  color: var(--accent);
-  text-decoration: none;
-}
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-a:hover {
-  opacity: 0.9;
-}
+    a:hover {
+      opacity: 0.9;
+    }
 
--links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  font-size: 0.95rem;
-}
-    
     .container {
       width: min(92%, var(--max));
       margin: 0 auto;
     }
 
+    /* NAVBAR (MATCHES INDEX) */
     .topbar {
       position: sticky;
       top: 0;
@@ -60,24 +55,26 @@ a:hover {
       border-bottom: 1px solid var(--line);
     }
 
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 0;
-  gap: 20px;
-}
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 20px;
+    }
 
     .brand {
       font-weight: 700;
     }
 
-    -links {
+    .nav-links {
       display: flex;
+      flex-wrap: wrap;
       gap: 18px;
       font-size: 0.95rem;
     }
 
+    /* HERO */
     .hero {
       padding: 80px 0 30px;
     }
@@ -104,6 +101,7 @@ a:hover {
       padding: 28px 0;
     }
 
+    /* PROJECT CARDS */
     .project-card {
       background: linear-gradient(180deg, var(--panel), var(--panel-2));
       border: 1px solid var(--line);
@@ -187,7 +185,7 @@ a:hover {
 
 <body>
 
-  <!-- NAVBAR (same as index) -->
+  <!-- NAVBAR -->
   <div class="topbar">
     <div class="container nav">
       <div class="brand">Siddharth Basapur</div>
@@ -227,19 +225,17 @@ a:hover {
 
           <p class="section-copy">
             SafeMed is a fully functioning automatic pill organizer designed to assist seniors (65+) in managing
-            their daily medication schedules safely and independently. The system addresses a critical real-world
-            problem—missed or incorrect medication dosing—by automating the dispensing process.
+            medication schedules safely and independently.
           </p>
 
           <p class="section-copy">
-            The device uses an embedded control system with a keypad interface to allow users to interact with the system,
-            set schedules, and retrieve medication. Internally, the system integrates Arduino-based control logic,
-            power systems, and a mechanical dispensing mechanism.
+            The system uses embedded control logic, a keypad interface, and a physical dispensing mechanism
+            to automate medication delivery and reduce user error.
           </p>
 
           <p class="section-copy">
-            I designed and built the entire prototype, including circuit integration, enclosure construction, and system logic.
-            A major focus of the project was usability—ensuring the system is simple, reliable, and accessible for elderly users.
+            I designed and built the entire prototype, including electronics integration, enclosure design,
+            and system behavior.
           </p>
 
           <div class="chips">
@@ -247,55 +243,43 @@ a:hover {
             <span class="chip">Embedded Systems</span>
             <span class="chip">Circuit Design</span>
             <span class="chip">Hardware Prototyping</span>
-            <span class="chip">User-Centered Design</span>
           </div>
 
           <ul>
             <li>Automated medication dispensing system</li>
-            <li>Keypad-based user interface</li>
-            <li>Integrated electronics and control logic</li>
-            <li>Physical prototype enclosure design</li>
-            <li>Focused on accessibility and real-world usability</li>
+            <li>Keypad-based interface</li>
+            <li>Integrated electronics + control logic</li>
+            <li>Full physical prototype build</li>
           </ul>
         </div>
       </div>
 
       <!-- SKILLSUSA -->
       <div class="project-card">
-
-        <img class="single-project-image" src="images/skillsusa_project.jpg">
+        <img class="single-project-image" src="images/skillsusa-project.jpg">
 
         <div class="project-content">
           <div class="project-title">Drone Fertilizer Attachment Prototype</div>
           <div class="project-subtitle">SkillsUSA • Arduino • Agricultural Engineering</div>
 
           <p class="section-copy">
-            This project explored the use of drone technology to improve agricultural efficiency,
-            specifically in spreading fertilizer across uneven or hard-to-reach terrain.
+            Designed a drone attachment system to help farmers spread fertilizer across uneven terrain.
           </p>
 
           <p class="section-copy">
-            I developed a working prototype attachment using Arduino circuitry, wiring systems,
-            and a structural model to simulate how fertilizer distribution could be automated through aerial systems.
-          </p>
-
-          <p class="section-copy">
-            The project required combining electronics, mechanical design, and systems thinking to translate a real-world
-            agricultural problem into a functional engineering solution.
+            Built a working prototype using Arduino circuitry and structural modeling to simulate real-world use.
           </p>
 
           <div class="chips">
             <span class="chip">Arduino</span>
             <span class="chip">Electronics</span>
             <span class="chip">Prototyping</span>
-            <span class="chip">Engineering Design</span>
           </div>
 
           <ul>
-            <li>Designed drone-based fertilizer system concept</li>
-            <li>Integrated electronics and circuit components</li>
-            <li>Built physical prototype structure</li>
-            <li>Applied engineering design to real-world agriculture problem</li>
+            <li>Designed agricultural drone system concept</li>
+            <li>Integrated electronics and wiring</li>
+            <li>Built physical prototype</li>
           </ul>
         </div>
       </div>
