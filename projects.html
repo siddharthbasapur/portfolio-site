@@ -140,13 +140,23 @@
   object-fit: contain;
   max-height: 360px;
   border-radius: 14px;
+
+  /* tighter border */
   border: 2px solid rgba(125, 211, 252, 0.35);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  /* removes extra blue surrounding space */
+  padding: 0;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .formula-image:hover {
   border-color: var(--accent);
   box-shadow: 0 0 12px rgba(125, 211, 252, 0.25);
+  transform: scale(1.01);
 }
 
     .project-content {
@@ -268,7 +278,11 @@
 <div style="text-align: center; padding-top: 10px;">
 
   <a href="https://www.formulabuckeyes.org/" target="_blank">
-    <img class="formula-image" src="images/formula_buckeye.png">
+    <img
+  class="formula-image"
+  src="images/formula_buckeye.png"
+  style="background: transparent;"
+>
   </a>
 
 </div>
