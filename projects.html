@@ -3,417 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Siddharth Basapur | Projects</title>
+  <meta name="description" content="Engineering and design projects by Siddharth Basapur." />
 
-  <style>
-    :root {
-      --bg: #0b1020;
-      --panel: #121936;
-      --panel-2: #182246;
-      --text: #eef2ff;
-      --muted: #b9c2e3;
-      --accent: #7dd3fc;
-      --accent-2: #a78bfa;
-      --line: rgba(255,255,255,0.12);
-      --card-shadow: 0 12px 30px rgba(0,0,0,0.25);
-      --max: 1100px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg, #08101f 0%, #0b1020 100%);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      opacity: 0.9;
-    }
-
-    .container {
-      width: min(92%, var(--max));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(14px);
-      background: rgba(11,16,32,0.75);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
-      gap: 20px;
-    }
-
-    .brand {
-      font-weight: 700;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-size: 0.95rem;
-    }
-
-    .hero {
-      padding: 80px 0 30px;
-    }
-
-    .hero-card {
-      background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 36px;
-      box-shadow: var(--card-shadow);
-    }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      margin-bottom: 12px;
-    }
-
-    .subtitle {
-      color: var(--muted);
-      max-width: 750px;
-    }
-
-    section {
-      padding: 28px 0;
-    }
-
-    .project-card {
-      background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      margin-bottom: 28px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-    }
-
-    .project-media {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      padding: 20px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .project-media img {
-      width: 100%;
-      height: 340px;
-      object-fit: contain;
-      background: #050914;
-      border-radius: 14px;
-    }
-
-    .single-project-image {
-      width: 92%;
-      margin: 20px auto;
-      display: block;
-      object-fit: contain;
-      max-height: 460px;
-      border-radius: 14px;
-    }
-
-.formula-image {
-  width: 68%;
-  margin: 20px auto;
-  display: block;
-  object-fit: contain;
-  max-height: 360px;
-  border-radius: 14px;
-
-  transition:
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
-}
-
-.formula-image:hover {
-  box-shadow: 0 0 0 2px var(--accent);
-  transform: scale(1.01);
-}
-
-    .project-content {
-      padding: 26px;
-    }
-
-    .project-title {
-      font-size: 1.6rem;
-      margin-bottom: 8px;
-    }
-
-    .project-subtitle {
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 14px;
-    }
-
-    .section-copy {
-      color: var(--muted);
-      margin-bottom: 14px;
-      max-width: 900px;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0;
-    }
-
-    .chip {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(125,211,252,0.08);
-      border: 1px solid rgba(125,211,252,0.2);
-    }
-
-    .project-button {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      color: #09111f;
-      font-weight: 700;
-      border: none;
-    }
-
-    .project-button:hover {
-      opacity: 0.9;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    @media (max-width: 850px) {
-      .project-media {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="site.css" />
 </head>
 
 <body>
-
-  <div class="topbar">
+  <header class="site-header">
     <div class="container nav">
-      <div class="brand">Siddharth Basapur</div>
-      <div class="nav-links">
+      <a class="brand" href="index.html">Siddharth Basapur</a>
+
+      <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-      </div>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="ibd-guide.html">IBD Life Starter</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-card">
-        <h1>Projects</h1>
-        <p class="subtitle">
-          A collection of engineering work focused on embedded systems, hardware prototyping,
-          and building solutions to real-world problems.
-        </p>
-      </div>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow">Selected Work</div>
 
-  <section>
-    <div class="container">
+          <h1>Projects built through engineering, design, and iteration.</h1>
 
-      <!-- SAFEMED -->
-      <div class="project-card">
-        <div class="project-media">
-          <img src="images/pill-organizer.jpg">
-          <img src="images/SafeMed Demonstration.gif">
+          <p class="subtitle">
+            A focused collection of work across embedded systems, health technology,
+            electronics, hardware prototyping, and practical problem solving.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="#safemed">SafeMed</a>
+            <a class="btn" href="#ibd">IBD Life Starter</a>
+            <a class="btn" href="#drone">Drone Prototype</a>
+          </div>
         </div>
 
-        <div class="project-content">
-          <div class="project-title">SafeMed Automatic Pill Organizer</div>
-          <div class="project-subtitle">Arduino • Embedded Systems • Accessibility • Product Design</div>
+        <aside class="hero-side">
+          <div class="meta-grid">
+            <div class="meta-item">
+              <div class="meta-label">Project Areas</div>
+              <div>Embedded systems, web design, electronics, health tech</div>
+            </div>
 
-          <p class="section-copy">
-            SafeMed is a fully functioning automatic pill organizer designed to assist seniors (65+) in managing medication schedules safely and independently.
-          </p>
+            <div class="meta-item">
+              <div class="meta-label">Tools</div>
+              <div>Arduino, HTML/CSS, CAD, GitHub, Cloudflare</div>
+            </div>
 
-          <p class="section-copy">
-            The system uses embedded control logic, a keypad interface, and a physical dispensing mechanism to automate medication delivery and reduce user error.
-          </p>
-
-          <p class="section-copy">
-            I designed and built the entire prototype, including electronics integration, enclosure design, and system behavior.
-          </p>
-
-          <div class="chips">
-            <span class="chip">Arduino</span>
-            <span class="chip">Embedded Systems</span>
-            <span class="chip">Circuit Design</span>
-            <span class="chip">Hardware Prototyping</span>
+            <div class="meta-item">
+              <div class="meta-label">Focus</div>
+              <div>Useful prototypes with clear real-world applications</div>
+            </div>
           </div>
-
-          <ul>
-            <li>Automated medication dispensing system</li>
-            <li>Keypad-based interface</li>
-            <li>Integrated electronics + control logic</li>
-            <li>Full physical prototype build</li>
-          </ul>
-        </div>
+        </aside>
       </div>
+    </section>
 
-      <!-- FORMULA BUCKEYES -->
-      <div class="project-card">
+    <section class="section">
+      <div class="container">
 
-<div style="text-align: center; padding-top: 10px;">
-
-  <a href="https://www.formulabuckeyes.org/" target="_blank">
-    <img
-  class="formula-image"
-  src="images/formula_buckeye.png"
-  style="background: transparent;"
->
-  </a>
-
-</div>
-
-        <div class="project-content">
-          <div class="project-title">Formula Buckeyes</div>
-
-          <div class="project-subtitle">
-            Formula SAE • Electronics • Team Engineering • Motorsports
+        <article id="safemed" class="project-card">
+          <div class="project-media">
+            <img src="images/pill-organizer.jpg" alt="SafeMed automatic pill organizer prototype">
+            <img src="images/SafeMed Demonstration.gif" alt="SafeMed demonstration animation">
           </div>
 
-          <p class="section-copy">
-            I am a member of the Formula Buckeyes Formula SAE team at The Ohio State University,
-            where students collaboratively design, build, and test a competitive formula-style race car.
-            The team combines mechanical, electrical, software, and manufacturing engineering to develop
-            a fully functioning vehicle for intercollegiate competition.
-          </p>
+          <div class="project-content">
+            <div class="project-title">SafeMed Automatic Pill Organizer</div>
+            <div class="project-subtitle">Arduino • Embedded Systems • Accessibility • Product Design</div>
 
-          <p class="section-copy">
-            As part of the low-voltage electronics team, I work on integrating and supporting electronic systems
-            used throughout the vehicle. This includes working with wiring, embedded electronics,
-            and system-level problem solving in a collaborative engineering environment.
-          </p>
+            <p class="section-copy">
+              SafeMed is a functioning automatic pill organizer designed to help seniors manage
+              medication schedules safely and independently.
+            </p>
 
-          <div class="chips">
-            <span class="chip">Formula SAE</span>
-            <span class="chip">Electronics</span>
-            <span class="chip">Embedded Systems</span>
-            <span class="chip">Team Engineering</span>
-            <span class="chip">Problem Solving</span>
+            <p class="section-copy">
+              The system uses embedded control logic, a keypad interface, and a physical dispensing
+              mechanism to automate medication delivery and reduce user error.
+            </p>
+
+            <div class="chips">
+              <span class="chip">Arduino</span>
+              <span class="chip">Embedded Systems</span>
+              <span class="chip">Circuit Design</span>
+              <span class="chip">Hardware Prototyping</span>
+            </div>
+
+            <ul>
+              <li>Built a full physical prototype with integrated electronics and enclosure design</li>
+              <li>Designed keypad-based input for simple user interaction</li>
+              <li>Connected mechanical movement with embedded control behavior</li>
+              <li>Focused on accessibility and medication safety for older adults</li>
+            </ul>
           </div>
+        </article>
 
-          <ul>
-            <li>Contribute to the low-voltage electronics systems on the vehicle</li>
-            <li>Collaborate with multidisciplinary engineering subteams</li>
-            <li>Support wiring, integration, and electronics-related tasks</li>
-            <li>Gain hands-on motorsports engineering experience</li>
-          </ul>
+        <article id="formula" class="project-card">
+          <a href="https://www.formulabuckeyes.org/" target="_blank" rel="noreferrer">
+            <img class="formula-image" src="images/formula_buckeye.png" alt="Formula Buckeyes logo">
+          </a>
 
-          <p class="section-copy" style="margin-top: 20px;">
-            Learn more about the team here:
-            <a 
-  href="https://www.formulabuckeyes.org/" 
-  target="_blank"
-  style="text-decoration: underline;"
->
-  Formula Buckeyes Website
-</a>
-          </p>
+          <div class="project-content">
+            <div class="project-title">Formula Buckeyes</div>
+            <div class="project-subtitle">Formula SAE • Electronics • Team Engineering • Motorsports</div>
 
-        </div>
+            <p class="section-copy">
+              I am a member of the Formula Buckeyes Formula SAE team at The Ohio State University,
+              where students collaboratively design, build, and test a competitive formula-style race car.
+            </p>
+
+            <p class="section-copy">
+              As part of the low-voltage electronics team, I work on supporting electronic systems
+              used throughout the vehicle, including wiring, embedded electronics, and system-level
+              problem solving.
+            </p>
+
+            <div class="chips">
+              <span class="chip">Formula SAE</span>
+              <span class="chip">Electronics</span>
+              <span class="chip">Embedded Systems</span>
+              <span class="chip">Team Engineering</span>
+              <span class="chip">Problem Solving</span>
+            </div>
+
+            <ul>
+              <li>Contribute to low-voltage electronics systems on the vehicle</li>
+              <li>Collaborate with multidisciplinary engineering subteams</li>
+              <li>Support wiring, integration, and electronics-related tasks</li>
+              <li>Gain hands-on motorsports engineering experience</li>
+            </ul>
+
+            <div class="actions">
+              <a class="btn btn-primary" href="https://www.formulabuckeyes.org/" target="_blank" rel="noreferrer">Visit Team Site</a>
+            </div>
+          </div>
+        </article>
+
+        <article id="ibd" class="project-card">
+          <div class="project-content">
+            <div class="project-title">IBD Life Starter</div>
+            <div class="project-subtitle">Health Tech • Web Design • Data Organization • Patient Support</div>
+
+            <p class="section-copy">
+              IBD Life Starter is a health-focused website concept designed to help people recently
+              diagnosed with Crohn’s disease or ulcerative colitis adjust to daily life.
+            </p>
+
+            <p class="section-copy">
+              The project organizes trusted medical information and patient experience themes into
+              simple guides about food, travel, symptoms, and adjustment after diagnosis. Future
+              versions can connect scraped research data to a structured spreadsheet and display
+              approved summaries on the website.
+            </p>
+
+            <div class="chips">
+              <span class="chip">Health Tech</span>
+              <span class="chip">Web Design</span>
+              <span class="chip">IBD Support</span>
+              <span class="chip">Data Organization</span>
+              <span class="chip">Patient Resources</span>
+            </div>
+
+            <ul>
+              <li>Designed as a resource page for people newly diagnosed with IBD</li>
+              <li>Separates trusted medical information from patient experience themes</li>
+              <li>Built into my portfolio with HTML, CSS, GitHub, and Cloudflare</li>
+              <li>Planned pipeline: scrape sources, store summaries in Excel, export approved content to the site</li>
+            </ul>
+
+            <div class="actions">
+              <a class="btn btn-primary" href="ibd-guide.html">Visit IBD Life Starter</a>
+            </div>
+          </div>
+        </article>
+
+        <article id="drone" class="project-card">
+          <img class="single-project-image" src="images/skillsusa_project.jpg" alt="Drone fertilizer attachment prototype">
+
+          <div class="project-content">
+            <div class="project-title">Drone Fertilizer Attachment Prototype</div>
+            <div class="project-subtitle">SkillsUSA • Arduino • Hardware Prototyping • Agricultural Innovation</div>
+
+            <p class="section-copy">
+              This SkillsUSA project focused on a practical engineering solution for agriculture.
+              I built a prototype attachment using Arduino circuitry and a physical model to show how
+              a drone-based fertilizer spreading system could help farmers cover rough or hard-to-reach terrain.
+            </p>
+
+            <p class="section-copy">
+              The project strengthened my skills in electronics, prototyping, and turning an idea
+              into a working proof of concept with a clear use case.
+            </p>
+
+            <div class="chips">
+              <span class="chip">Arduino</span>
+              <span class="chip">Circuit Design</span>
+              <span class="chip">Hardware Prototyping</span>
+              <span class="chip">Engineering Design</span>
+              <span class="chip">Agriculture</span>
+            </div>
+
+            <ul>
+              <li>Designed and assembled a prototype model for a drone-based fertilizer attachment</li>
+              <li>Integrated Arduino hardware, wiring, and battery-powered electronics</li>
+              <li>Built a physical structure to demonstrate the concept and component layout</li>
+              <li>Focused on a farming problem involving difficult terrain</li>
+              <li>Presented the concept through SkillsUSA competition work</li>
+            </ul>
+          </div>
+        </article>
+
       </div>
+    </section>
+  </main>
 
-      <!-- IBD LIFE STARTER -->
-      <div class="project-card">
-        <div class="project-content">
-          <div class="project-title">IBD Life Starter</div>
-          <div class="project-subtitle">Health Tech • Web Design • Data Organization • Patient Support</div>
-
-          <p class="section-copy">
-            IBD Life Starter is a health-focused website concept designed to help people recently diagnosed with Crohn’s disease or ulcerative colitis adjust to daily life.
-          </p>
-
-          <p class="section-copy">
-            The project organizes trusted medical information and patient experience themes into simple lifestyle guides about food, travel, symptoms, and adjustment after diagnosis.
-          </p>
-
-          <div class="chips">
-            <span class="chip">Health Tech</span>
-            <span class="chip">Web Design</span>
-            <span class="chip">IBD Support</span>
-            <span class="chip">Data Organization</span>
-            <span class="chip">Patient Resources</span>
-          </div>
-
-          <ul>
-            <li>Designed as a resource page for people newly diagnosed with IBD</li>
-            <li>Focuses on food, travel, symptoms, and lifestyle adjustment</li>
-            <li>Separates trusted medical information from patient experience themes</li>
-            <li>Built as part of my portfolio website using HTML, CSS, GitHub, and Cloudflare</li>
-          </ul>
-
-          <a class="project-button" href="ibd-guide.html">Visit IBD Life Starter</a>
-        </div>
-      </div>
-
-      <!-- SKILLSUSA -->
-      <div class="project-card">
-        <img class="single-project-image" src="images/skillsusa_project.jpg">
-
-        <div class="project-content">
-          <div class="project-title">Drone Fertilizer Attachment Prototype</div>
-          <div class="project-subtitle">SkillsUSA • Arduino • Hardware Prototyping • Agricultural Innovation</div>
-
-          <p class="section-copy">
-            This SkillsUSA project focused on designing a practical engineering solution for agriculture. I built a prototype attachment using Arduino circuitry and a physical cardboard model to demonstrate how a drone-based fertilizer spreading system could help farmers cover rough or hard-to-reach terrain.
-          </p>
-
-          <p class="section-copy">
-            The project helped me strengthen my skills in electronics, prototyping, and turning an idea into a working proof of concept. It also gave me experience thinking through real-world engineering problems and designing technology with a practical use case.
-          </p>
-
-          <div class="chips">
-            <span class="chip">Arduino</span>
-            <span class="chip">Circuit Design</span>
-            <span class="chip">Hardware Prototyping</span>
-            <span class="chip">Engineering Design</span>
-            <span class="chip">Agriculture</span>
-          </div>
-
-          <div class="project-title" style="font-size: 1.3rem; margin-top: 10px;">What I Worked On</div>
-
-          <ul>
-            <li>Designed and assembled a prototype model for a drone-based fertilizer attachment</li>
-            <li>Integrated Arduino hardware, wiring, and battery-powered electronics</li>
-            <li>Built a physical structure to demonstrate the concept and component layout</li>
-            <li>Focused on a real-world farming problem involving difficult terrain</li>
-            <li>Presented the concept through SkillsUSA competition work</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
+  <footer class="footer">
+    <div class="container">© 2026 Siddharth Basapur. Selected engineering and design projects.</div>
+  </footer>
 </body>
 </html>
