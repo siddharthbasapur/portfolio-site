@@ -601,3 +601,15 @@ li + li {
     padding: 8px 14px;
   }
 }
+/* Make only the homepage hero headline smaller */
+.home-hero-title {
+  font-size: clamp(2.15rem, 4vw, 3.65rem);
+  line-height: 1.05;
+  max-width: 900px;
+}
+
+@media (max-width: 900px) {
+  .home-hero-title {
+    font-size: clamp(2rem, 8vw, 3.1rem);
+  }
+}
