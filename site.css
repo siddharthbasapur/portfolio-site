@@ -340,6 +340,21 @@ li + li {
   gap: 12px;
 }
 
+.contact-card {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-card .contact-list {
+  justify-items: center;
+  font-size: 1.05rem;
+}
+
+.contact-card .actions {
+  justify-content: center;
+}
+
 .project-card {
   margin-bottom: 26px;
   overflow: hidden;
@@ -399,6 +414,18 @@ li + li {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   margin-bottom: 18px;
+}
+
+.project-subsection {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.project-subsection-title {
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+  color: var(--ink);
 }
 
 .notice {
