@@ -548,3 +548,56 @@ li + li {
 .contact-card .actions {
   justify-content: center;
 }
+/* ================================
+   NAVBAR ALIGNMENT FIX
+   Centers all nav links vertically with name and resume button
+================================ */
+
+.nav {
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  line-height: 1;
+}
+
+/* Keep Resume as the right-most, more visible option */
+.nav-links a.resume-link {
+  color: var(--accent-2);
+  border: 1px solid var(--accent-2);
+  border-radius: 999px;
+  padding: 0 14px;
+  background: rgba(154, 107, 61, 0.08);
+}
+
+.nav-links a.resume-link:hover {
+  background: var(--accent-2);
+  color: var(--surface);
+  opacity: 1;
+}
+
+/* Mobile navbar cleanup */
+@media (max-width: 640px) {
+  .nav-links {
+    align-items: flex-start;
+  }
+
+  .nav-links a {
+    min-height: auto;
+  }
+
+  .nav-links a.resume-link {
+    padding: 8px 14px;
+  }
+}
