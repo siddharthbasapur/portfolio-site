@@ -509,3 +509,42 @@ li + li {
     font-size: 0.98rem;
   }
 }
+/* ================================
+   NAV RESUME BUTTON + CONTACT WIDTH
+================================ */
+
+/* Make the Resume nav item more visible */
+.nav-links .nav-resume {
+  color: var(--accent-2);
+  border: 1px solid var(--accent-2);
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: rgba(154, 107, 61, 0.08);
+}
+
+.nav-links .nav-resume:hover {
+  color: var(--surface);
+  background: var(--accent-2);
+  opacity: 1;
+}
+
+/* Make the contact card the same width as other home sections */
+.contact-card {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-card .contact-list {
+  justify-items: center;
+  font-size: 1.05rem;
+}
+
+.contact-card .actions {
+  justify-content: center;
+}
